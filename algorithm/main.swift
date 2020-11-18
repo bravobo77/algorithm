@@ -11,18 +11,12 @@ import Foundation
 let num = readLine()
 
 if let number = num {
-    let array = number.components(separatedBy: " ")
-    let grades = Int(array[0])!
-    
-    if 90 <= grades && 100 >= grades{
-        print(" A ")
-    } else if 80 <= grades && 89 >= grades {
-        print(" B ")
-    }else if 70 <= grades && 79 >= grades {
-        print(" C ")
-    } else if 60 <= grades && 69 >= grades {
-        print(" D ")
-    } else  {
-        print(" F ")
+    let numbers: Int = Int(number)!
+    if numbers >= 1 && 9 >= numbers {
+        for i in 1...9 {
+            print("\(numbers) * \(i) = \(numbers*i)")
+        }
+    } else {
+        print("1~9 중 하나를 입력하세요")
     }
 }
