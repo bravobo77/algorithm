@@ -12,11 +12,11 @@ let num = readLine()
 
 if let number = num {
     let numbers: Int = Int(number)!
-    if numbers >= 1 && 9 >= numbers {
-        for i in 1...9 {
-            print("\(numbers) * \(i) = \(numbers*i)")
+    if numbers >= 1 && 4000 >= numbers {
+        if (numbers % 4 == 0) && ((numbers % 100 != 0) || (numbers % 400 == 0)) {
+            print("1")
+        } else {
+            print("0")
         }
-    } else {
-        print("1~9 중 하나를 입력하세요")
     }
 }
