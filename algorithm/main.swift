@@ -11,12 +11,10 @@ import Foundation
 let num = readLine()
 
 if let number = num {
-    let numbers: Int = Int(number)!
-    if numbers >= 1 && 4000 >= numbers {
-        if (numbers % 4 == 0) && ((numbers % 100 != 0) || (numbers % 400 == 0)) {
-            print("1")
-        } else {
-            print("0")
+    let input: Int = Int(number) ?? 0
+    if input > 0 && 100000 >= input {
+        for i in 1...input {
+            print("\(i)")
         }
     }
 }
