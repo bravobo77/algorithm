@@ -8,13 +8,14 @@
 
 import Foundation
 
-let num = readLine()
+let n: Int = Int(readLine()!)!
 
-if let number = num {
-    let input: Int = Int(number) ?? 0
-    if input > 0 && 100000 >= input {
-        for i in 1...input {
-            print("\(i)")
-        }
+for i in 1...n {
+    for _ in stride(from: n, to: i, by: -1) {
+        print(" ", terminator: "")
     }
+    for _ in stride(from: 0, to: i, by: 1) {
+        print("*", terminator: "")
+    }
+    print("")
 }
