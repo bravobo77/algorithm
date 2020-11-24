@@ -8,14 +8,22 @@
 
 import Foundation
 
-let n: Int = Int(readLine()!)!
+var arr: [Int] = []
+var input = 0
+var point = 0
 
-for i in 1...n {
-    for _ in stride(from: n, to: i, by: -1) {
-        print(" ", terminator: "")
-    }
-    for _ in stride(from: 0, to: i, by: 1) {
-        print("*", terminator: "")
-    }
-    print("")
+for _ in 0...8 {
+    input = Int(readLine()!)!
+    arr.append(input)
 }
+
+let max = arr.max()!
+
+for i in 0...8 {
+    if arr[i] == max {
+        point = i+1
+    }
+}
+
+print(max)
+print(point)
