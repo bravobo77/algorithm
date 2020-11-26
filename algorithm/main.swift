@@ -9,21 +9,31 @@
 import Foundation
 
 var arr: [Int] = []
+var arr2: [Int] = []
 var input = 0
-var point = 0
 
-for _ in 0...8 {
+for _ in 0...9 {
     input = Int(readLine()!)!
     arr.append(input)
 }
 
-let max = arr.max()!
+for i in 0...9 {
+    let remain = arr[i] % 42
+    arr2.append(remain)
+}
 
-for i in 0...8 {
-    if arr[i] == max {
-        point = i+1
+var dict = [Int: Bool]()
+
+//for i in arr2 {
+//    print(dict.updateValue(true, forKey: i))
+//}
+
+extension Array where Element: Hashable {
+    func removeDuplicates() -> [Element] {
+        var addedDict = [Element: Bool]()
+        return filter ({ addedDict.updateValue(true, forKey: $0) == nil})
     }
 }
 
-print(max)
-print(point)
+let result = arr2.removeDuplicates()
+print(result.count)
