@@ -8,32 +8,33 @@
 
 import Foundation
 
-var arr: [Int] = []
-var arr2: [Int] = []
 var input = 0
+var arr: Array<Int> = Array()
+//var arr2: Array<Int> = Array()
 
-for _ in 0...9 {
+for _ in 0..<3 {
     input = Int(readLine()!)!
     arr.append(input)
 }
 
-for i in 0...9 {
-    let remain = arr[i] % 42
-    arr2.append(remain)
-}
+var a: Int = arr[0]
+var b: Int = arr[1]
+var c: Int = arr[2]
 
-var dict = [Int: Bool]()
+let result = a*b*c
 
-//for i in arr2 {
-//    print(dict.updateValue(true, forKey: i))
-//}
+var count: [Int] = Array.init(repeating: 0, count: 10)
+let results = String(result)
 
-extension Array where Element: Hashable {
-    func removeDuplicates() -> [Element] {
-        var addedDict = [Element: Bool]()
-        return filter ({ addedDict.updateValue(true, forKey: $0) == nil})
+results.forEach{ i in
+    let j = Int(String(i))
+    for k in 0..<10 {
+        if j == k {
+            count[k] += 1
+        }
     }
 }
 
-let result = arr2.removeDuplicates()
-print(result.count)
+count.forEach {
+    print($0)
+}
