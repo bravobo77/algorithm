@@ -4,9 +4,9 @@
 * 알고리즘을 통해 공부한 내용이나 풀이는 https://blog.naver.com/delevopeeer
 * 오타나 수정할 사항이 있는 경우에는 언제든지 알려주세요 😎
 
-<ul> <h2>Swift
+<ul> <h4>Swift
   <li> <a href="https://blog.naver.com/delevopeeer/222128040282" target="_blank">1330</a>
-  <li> [9498](https://blog.naver.com/delevopeeer/222128040282)
+  <li> 9498
   <li> <a href="https://blog.naver.com/delevopeeer/222128040282" target="_blank">2739</a>
   <li> 2753
   <li> 2741
