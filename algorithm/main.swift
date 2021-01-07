@@ -7,17 +7,28 @@
 //
 
 import Foundation
-
-let num = readLine()
-
-if let number = num {
-    let array = number.components(separatedBy: " ")
-    let a = Int(array[0])!
-    let b = Int(array[1])!
     
-    print(a + b)
-    print(a - b)
-    print(a * b)
-    print(a / b)
-    print(a % b)
+let n = Int(readLine()!)!
+let scoreInput = readLine()!
+
+var arr = scoreInput.split(separator: " ").map { Double($0)!}
+
+let max = arr.max()!
+//print(max)
+
+//if n != arr.count {
+//    print("error")
+//    exit(0)
+//}
+
+var sum: Double = 0.0
+
+for i in 0..<n {
+//    print(arr[i])
+    arr[i] = arr[i]/max * 100
+//    print(arr)
+    sum += arr[i]
+//    print(result)
 }
+
+print(sum/Double(n))
