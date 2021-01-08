@@ -8,27 +8,17 @@
 
 import Foundation
     
-let n = Int(readLine()!)!
-let scoreInput = readLine()!
+let x = Int(readLine()!)!
+let y = Int(readLine()!)!
 
-var arr = scoreInput.split(separator: " ").map { Double($0)!}
-
-let max = arr.max()!
-//print(max)
-
-//if n != arr.count {
-//    print("error")
-//    exit(0)
-//}
-
-var sum: Double = 0.0
-
-for i in 0..<n {
-//    print(arr[i])
-    arr[i] = arr[i]/max * 100
-//    print(arr)
-    sum += arr[i]
-//    print(result)
+if (x>0 && y>0) {
+    print("1")
+} else if (x>0 && y<0) {
+    print("4")
+} else if (x<0 && y>0) {
+    print("2")
+} else if (x<0 && y<0) {
+    print("3")
+} else {
+    print("\(x)와\(y)는 어디에도 속하지 못합니다")
 }
-
-print(sum/Double(n))
