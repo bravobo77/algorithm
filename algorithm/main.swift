@@ -8,17 +8,27 @@
 
 import Foundation
     
-let x = Int(readLine()!)!
-let y = Int(readLine()!)!
+var clock = readLine()!
 
-if (x>0 && y>0) {
-    print("1")
-} else if (x>0 && y<0) {
-    print("4")
-} else if (x<0 && y>0) {
-    print("2")
-} else if (x<0 && y<0) {
-    print("3")
-} else {
-    print("\(x)와\(y)는 어디에도 속하지 못합니다")
+var arr = clock.split(separator: " ")
+var h = Int(arr[0])!
+var m = Int(arr[1])!
+
+var resultH:Int =  0
+var resultM: Int = 0
+
+
+
+if (h > 0) {
+    resultH = (h * 60 + m - 45)/60
+    resultM = (h * 60 + m - 45)%60
+} else if (h==0 && m >= 45) {
+    resultH = 0
+    resultM = m - 45
+} else if ( h==0 && m < 45) {
+    resultH = 23
+    resultM = m + 60 - 45
 }
+
+print(resultH, resultM)
+
