@@ -8,27 +8,50 @@
 
 import Foundation
     
-var clock = readLine()!
+var number = readLine()!
+var arr = number.split(separator: " ")
 
-var arr = clock.split(separator: " ")
-var h = Int(arr[0])!
-var m = Int(arr[1])!
+var inputN = Int(arr[0])!
+var inputX = Int(arr[1])!
 
-var resultH:Int =  0
-var resultM: Int = 0
-
+//print(inputN,inputX)
 
 
-if (h > 0) {
-    resultH = (h * 60 + m - 45)/60
-    resultM = (h * 60 + m - 45)%60
-} else if (h==0 && m >= 45) {
-    resultH = 0
-    resultM = m - 45
-} else if ( h==0 && m < 45) {
-    resultH = 23
-    resultM = m + 60 - 45
+var inputArr: [Int] = []
+
+let randomN = 0
+
+for _ in 0..<inputN {
+    inputArr.append(randomN)
 }
 
-print(resultH, resultM)
+var number2 = readLine()!
+var arr2 = number2.split(separator: " ").map({Int($0)!})
+
+
+if arr2.count != inputArr.count {
+    print("숫자의 갯수를 정확히 입력해주세요")
+    exit(0)
+}
+
+print(arr2)
+
+var result: [Int] = []
+
+var s = 0
+
+for i in arr2 {
+//    print(i)
+    if i < inputX {
+        result.append(i)
+//        s += 1
+    }
+    
+}
+
+print(result.map{"\($0)"}.joined(separator: " "))
+
+
+
+
 
