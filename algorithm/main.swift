@@ -8,21 +8,21 @@
 
 import Foundation
     
-var number = readLine()!
-var arr = number.split(separator: " ")
+var input = readLine()!
+var arr = input.split(separator: " ").map { Int($0)!}
+var result: [Int] = []
 
-var inputX = Int(arr[1])!
+//print(arr)
 
-var number2 = readLine()!
-var result = number2.split(separator: " ")
-    .map({Int($0)!})
-    .filter{$0<inputX}
-    .map{"\($0)"}
-    .joined(separator: " ")
+while true {
+    if arr == [0,0] {
+        break
+    }
+    result.append(arr[0] + arr[1])
+    input = readLine()!
+    arr = input.split(separator: " ").map { Int($0)!}
+}
 
-print(result)
-
-
-
-
-
+result.forEach { (number) in
+    print("\(number)")
+}
