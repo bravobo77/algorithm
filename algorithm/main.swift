@@ -8,21 +8,23 @@
 
 import Foundation
     
-var input = readLine()!
-var arr = input.split(separator: " ").map { Int($0)!}
-var result: [Int] = []
+let input = Int(readLine()!)!
 
-//print(arr)
+var number = input
+var count = 0
 
-while true {
-    if arr == [0,0] {
-        break
+repeat {
+    count += 1
+    if number < 10 {
+        number = number * 11
+        continue
     }
-    result.append(arr[0] + arr[1])
-    input = readLine()!
-    arr = input.split(separator: " ").map { Int($0)!}
-}
+    
+    let a = number % 10
+    let b = (number % 10 + number / 10 ) % 10
+    number = a * 10 + b
+    
+} while number != input
 
-result.forEach { (number) in
-    print("\(number)")
-}
+print(count)
+
