@@ -8,7 +8,7 @@
 - [1330](https://blog.naver.com/delevopeeer/222128040282)
 - 9498
 - 2739　
-- 2753
+- 2753 
 - 2741
 - [2439](https://blog.naver.com/delevopeeer/222151495363)
 - [2562](https://blog.naver.com/delevopeeer/222153134565)
