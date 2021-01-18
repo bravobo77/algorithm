@@ -8,23 +8,27 @@
 
 import Foundation
     
-let input = Int(readLine()!)!
+var input = readLine()!
+var numbers = readLine()!
+var arr = numbers.split(separator: " ").map {Int($0)!}
 
-var number = input
-var count = 0
+if Int(input)! != arr.count {
+    print("일치하지 않습니다")
+    exit(0)
+}
 
-repeat {
-    count += 1
-    if number < 10 {
-        number = number * 11
-        continue
+var min = 1000000
+var max = -1000000
+//print(a, b)
+
+for i in arr {
+    if min > i {
+        min = i
     }
     
-    let a = number % 10
-    let b = (number % 10 + number / 10 ) % 10
-    number = a * 10 + b
-    
-} while number != input
+    if max < i {
+        max = i
+    }
+}
 
-print(count)
-
+print("\(min) \(max)")
