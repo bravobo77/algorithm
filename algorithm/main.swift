@@ -7,28 +7,12 @@
 //
 
 import Foundation
-    
-var input = readLine()!
-var numbers = readLine()!
-var arr = numbers.split(separator: " ").map {Int($0)!}
 
-if Int(input)! != arr.count {
-    print("일치하지 않습니다")
-    exit(0)
+var arr = Set<Int>()
+
+for _ in 0..<10 {
+    let numbers = Int(readLine()!)!
+    arr.insert(numbers % 42)
 }
 
-var min = 1000000
-var max = -1000000
-//print(a, b)
-
-for i in arr {
-    if min > i {
-        min = i
-    }
-    
-    if max < i {
-        max = i
-    }
-}
-
-print("\(min) \(max)")
+print(arr.count)
